@@ -23,6 +23,8 @@ $desc_attr = $order === "desc" ? "checked" : "";
 
 $min_date = date("Y-m-d");
 
+$complete = $value['is_done'] === false ? "incomplete" : "complete";
+
 ?>
 
 <!DOCTYPE html>

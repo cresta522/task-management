@@ -37,12 +37,16 @@
   font-weight: bold;
 }
 
-.complete {
+.complete{
   background-color: rgb(255, 231, 94);
 }
 
-.incomplete {
+.incomplete{
   background-color: rgb(76, 117, 179);
+}
+
+.incomplete .work{
+  background-color: rgb(175, 84, 112);
 }
 
 input[type=radio] {

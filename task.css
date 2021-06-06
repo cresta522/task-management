@@ -5,12 +5,44 @@
   text-align: center;
 }
 
+.flex{
+  display: flex;
+
+}
+.task-top-img{
+  width: 42em;
+  height: 37em;
+  margin-left: 1em;
+}
+
+.content{
+  display: inline-block;
+  width: 14em;
+  padding: 0.5em;
+  margin: 0.5em;
+  position: relative;
+}
+.content p i{
+  color: rgb(224, 78, 73);
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 2em;
+}
+.cercle{
+  color: rgb(224, 78, 73);
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  font-weight: bold;
+}
+
 .complete {
-  background-color: rgb(252, 255, 94);
+  background-color: rgb(255, 231, 94);
 }
 
 .incomplete {
-  background-color: cornflowerblue;
+  background-color: rgb(76, 117, 179);
 }
 
 input[type=radio] {

@@ -86,9 +86,12 @@ $min_date = date("Y-m-d");
       <button type="submit" class="button search-button button-decoration"><i class="fas fa-search"></i></button>
     </form>
   </div>
+  <img src="img/daruma.jpeg" alt="だるま" class="task-top-img">
   <?php foreach ($records as $key => $value) : ?>
     <div class="task-wrapper">
-      <div class="<?php if ((bool)$value['is_done'] === false) : ?>incomplete<?php else : ?>complete<?php endif; ?>">
+     
+      <div class="content <?php if ((bool)$value['is_done'] === false) : ?>incomplete<?php else : ?>complete<?php endif; ?> 
+        <?php echo $value['category'] ?>">
 
         <p> <?php //echo htmlspecialchars($value['category']); 
             ?> </p>
@@ -102,6 +105,7 @@ $min_date = date("Y-m-d");
             <input type="hidden" name="category" value="<?php echo $category ?>">
             <input type="hidden" name="order" value="<?php echo $order ?>">
             <button type="submit" class="button-decoration"><i class="far fa-square"></i></button>
+            
           </form>
         <?php else : ?>
           <form action="incomplete.php" method="post">
@@ -110,16 +114,17 @@ $min_date = date("Y-m-d");
             <input type="hidden" name="category" value="<?php echo $category ?>">
             <input type="hidden" name="order" value="<?php echo $order ?>">
             <button type="submit" class="button-decoration"><i class="far fa-check-square"></i></button>
+            <p><i class="far fa-circle"></i></p>
+            <p class="cercle">はなまる！</p>
           </form>
         <?php endif; ?>
 
+        <form action="delete.php" method="post">
+          <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
+          <input type="hidden" name="order" value="<?php echo $order ?>">
+          <button type="submit" class="button-decoration"><i class="fas fa-times"></i></button>
+        </form>
       </div>
-
-      <form action="delete.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
-        <input type="hidden" name="order" value="<?php echo $order ?>">
-        <button type="submit" class="button-decoration"><i class="fas fa-times"></i></button>
-      </form>
     </div>
   <?php endforeach; ?>
 </body>
